@@ -1,0 +1,36 @@
+[package]
+name = "ssbu-anti-jp-error"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[package.metadata.skyline]
+titleid = "01006A800016E000"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = ["avaru-guard"]
+avaru-guard = []
+
+[dependencies]
+skyline = { git = "https://github.com/ultimate-research/skyline-rs.git" }
+skyline-web = { git = "https://github.com/skyline-rs/skyline-web.git" }
+paste = "1.0.15"
+tungstenite = "0.24"
+binrw = "0.11.2"
+bitflags = "2.11.0"
+derivative = "2.2.0"
+num_enum = "0.7.5"
+bytes = "1.11.1"
+rtrb = "0.3.3"
+aes-gcm = { version = "0.10.3", default-features = false, features = ["aes", "alloc"] }
+getrandom = { version = "0.2", features = ["custom"] }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
