@@ -1,7 +1,6 @@
 // spun off from sniffer, stripped most of the logging so unused warnings stick around
 #![allow(dead_code, unused_imports, unused_variables)]
 
-mod ansi;
 mod net;
 mod game;
 mod rng;

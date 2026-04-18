@@ -7,7 +7,6 @@ use derivative::Derivative;
 use num_enum::FromPrimitive;
 use tungstenite::{protocol::Role, Message, WebSocket};
 
-use crate::ansi as c;
 use crate::net::ssl::HookedStream;
 
 pub static GID: AtomicU32 = AtomicU32::new(0);
@@ -290,18 +289,6 @@ fn log_session_info(ms: &MatchmakeSession) {
         if buf.len() >= 0x20 {
             let name = extract_utf16_name(buf, 0x1e);
             if !name.is_empty() {
-                let my_pid = MY_PID.load(Ordering::SeqCst);
-                let is_self_host = my_pid != 0 && g.id_owner.id == my_pid;
-
-                let (_label, _bg, _marker) = if masqueraded {
-                    ("MASQUERADED", c::BG_MAGENTA, "⚠")
-                } else if is_self_host {
-                    ("SELF", c::BG_CYAN, "▶")
-                } else if buf[0] == 0x02 || g.max_participants > 2 {
-                    ("SUSPECT", c::BG_RED, "⚠")
-                } else {
-                    ("OPPONENT", c::BG_GREEN, "▶")
-                };
             }
         }
         for (_i, _chunk) in buf.chunks(32).enumerate() {

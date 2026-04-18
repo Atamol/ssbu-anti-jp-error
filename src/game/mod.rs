@@ -8,7 +8,6 @@ extern "C" {
     fn A64HookFunction(symbol: *const (), replace: *const (), result: *mut *const ());
 }
 
-use crate::ansi as c;
 use crate::net::{socket, pia, nex};
 
 const OFF_STATION_PTR_TABLE: usize = 0x06d42580;
@@ -150,7 +149,6 @@ unsafe fn log_match() {
         for pi in 0..MAX_PEERS {
             if let Some(r) = read_station_rtt(si, pi) {
                 if r.meas > 0 {
-                    let _lc = if r.loss > 0.05 { c::RED } else { c::GREEN };
                 }
             }
         }
