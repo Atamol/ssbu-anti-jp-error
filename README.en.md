@@ -29,7 +29,7 @@ This is driven by the server's renotification cadence, and it's not clear yet wh
 
 ## Download
 
-Grab the NRO from the [release page](https://github.com/Atamol/ssbu-anti-jp-error/releases/tag/v0.1.0).
+Grab the NRO from the [release page](https://github.com/Atamol/ssbu-anti-jp-error/releases).
 
 ## Requirements
 

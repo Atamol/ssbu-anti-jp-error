@@ -29,7 +29,7 @@
 
 ## ダウンロード
 
-[リリースページ](https://github.com/Atamol/ssbu-anti-jp-error/releases/tag/v0.1.0)からダウンロードできます．
+[リリースページ](https://github.com/Atamol/ssbu-anti-jp-error/releases)からダウンロードできます．
 
 ## 動作環境
 
