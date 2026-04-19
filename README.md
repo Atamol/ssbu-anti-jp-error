@@ -1,3 +1,5 @@
+## [English Here](README.en.md)
+
 # ssbu-anti-jp-error
 
 スマブラSP の「アヴァるエラー」対策の Skyline プラグイン．  
